@@ -1,6 +1,15 @@
 package de.htw_berlin.mytodolist;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class FootworkSession {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int workTime;
     private int restTime;
@@ -8,41 +17,20 @@ public class FootworkSession {
 
     public FootworkSession() {}
 
-    public FootworkSession(Long id, int workTime, int restTime, int round) {
-        this.id = id;
+    public FootworkSession(int workTime, int restTime, int round) {
         this.workTime = workTime;
         this.restTime = restTime;
         this.round = round;
     }
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public int getWorkTime() { return workTime; }
+    public void setWorkTime(int workTime) { this.workTime = workTime; }
 
-    public void setWorkTime(int workTime) {
-        this.workTime = workTime;
-    }
+    public int getRestTime() { return restTime; }
+    public void setRestTime(int restTime) { this.restTime = restTime; }
 
-    public int getWorkTime() {
-        return workTime;
-    }
-    public int getRestTime() {
-        return restTime;
-    }
-
-    public void setRestTime(int restTime) {
-        this.restTime = restTime;
-    }
-    public int getRound() {
-        return round;
-    }
-
-    public void setRound(int round) {
-        this.round = round;
-    }
-
+    public int getRound() { return round; }
+    public void setRound(int round) { this.round = round; }
 }
