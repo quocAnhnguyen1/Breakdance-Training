@@ -30,9 +30,8 @@ public class Controller {
     public FootworkSession updateSession(@PathVariable Long id, @RequestBody FootworkSession updated) {
         FootworkSession session = repository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        session.setWorkTime(updated.getWorkTime());
-        session.setRestTime(updated.getRestTime());
-        session.setRound(updated.getRound());
+        session.setName(updated.getName());
+        session.setIntervals(updated.getIntervals());
         return repository.save(session);
     }
 
