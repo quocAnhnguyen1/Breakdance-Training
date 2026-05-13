@@ -1,16 +1,27 @@
 package de.htw_berlin.mytodolist;
 
 public class FootworkSession {
+    private Long id;
     private int workTime;
     private int restTime;
     private int round;
 
+    public FootworkSession() {}
 
-    public FootworkSession (int workTime, int restTime, int  round){
-    this.workTime = workTime;
-    this.restTime = restTime;
-    this.round = round;
-}
+    public FootworkSession(Long id, int workTime, int restTime, int round) {
+        this.id = id;
+        this.workTime = workTime;
+        this.restTime = restTime;
+        this.round = round;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public void setWorkTime(int workTime) {
         this.workTime = workTime;
